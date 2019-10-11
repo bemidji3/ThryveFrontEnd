@@ -3,28 +3,20 @@
 
 ## Project setup
 ```
-npm install
+If you do not already have npm installed, install it here:
+https://www.npmjs.com/get-npm
+
+After npm is installed, open up this project in your IDE
+of choice and run npm install
+
+After running npm install, run "npm run serve" and it should start 
+running a dev build instance on localhost:8080
+
+If there are any issues with uninstalled packages,
+run "npm install uninstalle_package_name"
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
