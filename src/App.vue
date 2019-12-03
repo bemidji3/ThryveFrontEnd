@@ -1,7 +1,12 @@
 <template lang="pug">
     .master-container
-        FilterView(@gotResponse="displayResponse")
+        FilterView(@gotResponse="displayResponse" @confirmError="displayErrorDialog")
         ResponseView(:response="filterResponse" v-if="!isEmpty")
+        md-dialog(:md-active.sync="errorDialog")
+            md-dialog-content
+                span.md-display-1 Error with your filter.  Please fill in all fields completely.
+            md-dialog-actions
+                md-button.md-raised.md-accent(@click="errorDialog = false") Close
 </template>
 
 <script>
@@ -17,10 +22,10 @@ export default {
   },
     data() {
       return {
-          filterResponse: {}
+          filterResponse: {},
+          errorDialog: false
       }
     },
-
     computed: {
 
       isEmpty(){
@@ -34,6 +39,11 @@ export default {
     },
 
     methods: {
+
+        displayErrorDialog(){
+            this.errorDialog = true;
+        },
+
       displayResponse(val){
 
           console.log("response value: ")

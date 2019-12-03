@@ -7,6 +7,11 @@
 
 </template>
 
+//have an option to make it display with explicit and-or
+//perhaps by default
+//search for products by name, and display product info as an option
+//also be able to apply both name and nutrient values
+//add more nutrients to filter by
 <script>
     export default {
         name: "ResponseCard",
