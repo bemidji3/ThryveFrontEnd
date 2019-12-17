@@ -23,7 +23,7 @@
     import FilterCard from './FilterCard.vue'
     export default {
         name: "FilterView",
-        data () {
+        data () { //global variables
             return {
                 filters: [],
                 numberOfFilters: 0,
@@ -32,7 +32,7 @@
             }
         },
 
-        computed: {
+        computed: { //variables that are going to be dynamic/changing
             ableToSubmit(){
                 let returnValue = true;
 
@@ -68,8 +68,6 @@
 
                 console.log("deleting this id: " + id);
                 this.filters[id-1].deleted = true;
-
-
 
 
                 let invidualKey = Object.keys(keyValuePair);

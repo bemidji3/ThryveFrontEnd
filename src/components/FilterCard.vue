@@ -126,9 +126,11 @@
 
     .confirm-button
         margin 5px
+        background-color green
 
     .delete-button
         margin 5px
+        background-color darkred
 
 
 

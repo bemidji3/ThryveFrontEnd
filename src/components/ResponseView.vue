@@ -3,12 +3,18 @@
         md-card-header
             md-card-header-text Response:
         md-card-content
-            .over-view
-                ResponseCard(v-for="(res, index) in response.over" :res="res" :title="index" :keyword="'over'")
-            .under-view
-                ResponseCard(v-for="(res, index) in response.under" :res="res" :title="index" :keyword="'under'")
-            .equals-view
-                ResponseCard(v-for="(res, index) in response['equal']" :res="res" :title="index" :keyword="'equal'")
+            .and-or
+                .over-view
+                    ResponseCard(v-for="(res, index) in response.over" :res="res" :title="index" :keyword="'over'")
+                .under-view
+                    ResponseCard(v-for="(res, index) in response.under" :res="res" :title="index" :keyword="'under'")
+                .equals-view
+                    ResponseCard(v-for="(res, index) in response['equal']" :res="res" :title="index" :keyword="'equal'")
+            .true-and
+
+
+
+
 </template>
 
 <script>
@@ -22,19 +28,35 @@
             response: {}
         },
 
-        mounted(){
-            this.letMeSeeTheResponse();
-        },
-        methods: {
-            letMeSeeTheResponse(){
-                console.log("this is the over response inside response view");
-                console.log(this.response);
+        computed: {
+            trueAndFilter(){
+                // let overEntries = [];
+                // let equalEntries = [];
+                // let underEntries = [];
 
-                console.log("these are the Object keys inside the response view: ");
-                console.log(Object.keys(this.response.over))
+                this.response.over.forEach(entry => {
+                    console.log("this is object values in response.over: ");
+                    console.log(Object.values(entry));
+                    //overEntries.push(Object.values(entry))
+                });
 
+                this.response.equal.forEach(entry => {
+                    console.log("this is object values in response.equal: ");
+                    console.log(Object.values(entry));
+                });
 
+                this.response.under.forEach(entry => {
+                    console.log("this is object values in response.under: ");
+                    console.log(Object.values(entry));
+                });
+
+                return 1;
             }
+        },
+
+
+        methods: {
+
         }
     }
 </script>
